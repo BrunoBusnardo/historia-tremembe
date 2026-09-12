@@ -2,8 +2,8 @@ backend:
   name: github
   repo: BrunoBusnardo/historia-tremembe
   branch: main
-  base_url: https://historia-tremembe-b1n8.vercel.app
   auth_type: implicit
+  app_id: ''
 
 media_folder: "conteudo/imagens"
 public_folder: "/conteudo/imagens"
