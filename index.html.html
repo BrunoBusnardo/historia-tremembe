@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estação da Memória: Tremembé | Portal Historiográfico e Acervo Digital</title>
+  <meta name="description" content="Portal de acervo digital, pesquisas historiográficas e recursos pedagógicos sobre a história do município de Tremembé (SP) no Vale do Paraíba.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: '#8B261D',
+            burgundyHover: '#701D16',
+            parchment: '#FDFBF7',
+            cardParchment: '#F4EFE6',
+            goldAccent: '#C5A059',
+            sepiaText: '#4A3E3D',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#FDFBF7] text-[#2B2B2B] antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== HEADER & NAVBAR GLOBAL ==================== -->
+  <header class="sticky top-0 z-50 header-glass transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logotipo e Identidade -->
+        <a href="#home" class="flex items-center space-x-3 group">
+          <div class="w-11 h-11 rounded-xl bg-burgundy flex items-center justify-center text-amber-100 shadow-md group-hover:bg-burgundyHover transition-colors">
+            <i data-lucide="train-front" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="block text-xl font-serif-title font-bold text-stone-900 leading-tight">Estação da Memória</span>
+            <span class="block text-xs uppercase tracking-widest text-amber-900 font-semibold">Tremembé • SP</span>
+          </div>
+        </a>
+
+        <!-- Menu Desktop por Abas -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+          <a href="#home" class="nav-link py-1">Home</a>
+          <a href="#historia" class="nav-link py-1">História de Tremembé</a>
+          <a href="#acervo" class="nav-link py-1">Acervo Digital</a>
+          <a href="#espaco-professor" class="nav-link py-1">Espaço do Professor</a>
+          <a href="#publicacoes" class="nav-link py-1">Publicações e Artigos</a>
+        </nav>
+
+        <!-- Campo de Busca no Header & Botão Mobile -->
+        <div class="flex items-center space-x-3">
+          <div class="hidden lg:flex items-center bg-[#F4EFE6] border border-[#E5DEC9] rounded-lg px-3 py-1.5 focus-within:ring-2 focus-within:ring-burgundy/40">
+            <i data-lucide="search" class="w-4 h-4 text-stone-400 mr-2"></i>
+            <input type="text" id="global-search-input" placeholder="Buscar no acervo..." class="bg-transparent text-xs text-stone-800 placeholder-stone-400 focus:outline-none w-36 lg:w-48" />
+          </div>
+
+          <!-- Botão Menu Mobile -->
+          <button id="btn-mobile-menu" class="md:hidden p-2 text-stone-700 hover:text-burgundy rounded-lg focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-[#FDFBF7] px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+      <a href="#home" class="block py-2 text-stone-700 hover:text-burgundy">Home</a>
+      <a href="#historia" class="block py-2 text-stone-700 hover:text-burgundy">História de Tremembé</a>
+      <a href="#acervo" class="block py-2 text-stone-700 hover:text-burgundy">Acervo Digital</a>
+      <a href="#espaco-professor" class="block py-2 text-stone-700 hover:text-burgundy">Espaço do Professor</a>
+      <a href="#publicacoes" class="block py-2 text-stone-700 hover:text-burgundy">Publicações e Artigos</a>
+    </div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL (SPA) ==================== -->
+  <main class="flex-grow">
+
+    <!-- ==================== SEÇÃO 1: HOME ==================== -->
+    <section id="home" class="page-section">
+      
+      <!-- Hero Banner -->
+      <div class="relative bg-stone-900 text-stone-100 overflow-hidden py-16 md:py-24 border-b border-amber-900/40">
+        <div class="absolute inset-0 z-0 opacity-30 mix-blend-overlay">
+          <img src="Fotos/estação 1.jpg" alt="Estação Ferroviária de Tremembé" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-900/90 to-stone-950/80"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl space-y-6">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 bg-amber-900/50 border border-amber-600/40 rounded-full text-amber-200 text-xs font-semibold uppercase tracking-wider">
+              <i data-lucide="landmark" class="w-3.5 h-3.5 mr-1"></i> Estância Turística & Histórica
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif-title font-bold text-stone-100 leading-tight">
+              ESTAÇÃO DA MEMÓRIA
+              <span class="block text-2xl sm:text-3xl md:text-4xl text-amber-400 font-light mt-1">Tremembé no Vale do Paraíba</span>
+            </h1>
+
+            <p class="text-stone-300 text-base md:text-lg leading-relaxed">
+              Portal historiográfico, acervo digital e ambiente pedagógico dedicado ao resgate, salvaguarda e difusão do patrimônio cultural, da fé, da cultura arrozeira e da era ferroviária paulista.
+            </p>
+
+            <div class="pt-4 flex flex-wrap gap-4">
+              <a href="#acervo" class="px-6 py-3 bg-burgundy hover:bg-burgundyHover text-amber-50 text-sm font-semibold rounded-xl shadow-lg transition-all flex items-center">
+                <i data-lucide="folder-search" class="w-4 h-4 mr-2"></i> Explorar Acervo Digital
+              </a>
+              <a href="#historia" class="px-6 py-3 bg-stone-800/80 hover:bg-stone-800 text-stone-200 border border-stone-700 text-sm font-semibold rounded-xl transition-all flex items-center">
+                <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Conhecer a História
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Citação Historiográfica -->
+      <div class="bg-parchment-pattern py-10 border-b border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-3">
+          <i data-lucide="quote" class="w-8 h-8 mx-auto text-amber-800 opacity-60"></i>
+          <blockquote class="text-xl md:text-2xl font-serif-title italic text-stone-800 leading-relaxed max-w-4xl mx-auto">
+            "A História não é um monumento acabado, mas uma oficina em constante construção. Um trabalho feito a muitas mãos e em permanente movimento."
+          </blockquote>
+          <cite class="block text-xs uppercase tracking-widest text-amber-900 font-bold font-sans">
+            — Perspectiva Historiográfica • Projeto Estação da Memória
+          </cite>
+        </div>
+      </div>
+
+      <!-- Linha do Tempo Interativa -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold text-amber-900 uppercase tracking-widest">Cronologia Histórica</span>
+            <h2 class="text-2xl md:text-3xl font-serif-title font-bold text-stone-900">Linha do Tempo Interativa</h2>
+          </div>
+          <span class="hidden sm:inline-flex items-center text-xs text-stone-500">
+            <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 mr-1"></i> Clique nos marcos para explorar
+          </span>
+        </div>
+
+        <!-- Container de Nós da Linha do Tempo -->
+        <div class="relative bg-parchment p-6 rounded-2xl border border-stone-200 shadow-sm mb-6">
+          <div class="timeline-line hidden md:block"></div>
+          <div id="timeline-nodes-container" class="timeline-container relative z-10 justify-between items-center space-x-6 md:space-x-0">
+            <!-- Renderizado via JS -->
+          </div>
+        </div>
+
+        <!-- Painel de Detalhe da Linha do Tempo -->
+        <div id="timeline-detail-panel" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 shadow-md">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+
+      <!-- Seção de Visita Técnica (Professores) -->
+      <div class="bg-[#F4EFE6] border-y border-stone-200 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+              <span class="px-3 py-1 bg-burgundy/10 text-burgundy text-xs font-bold rounded-full uppercase tracking-wider">Formação Continuada</span>
+              <h2 class="text-3xl font-serif-title font-bold text-stone-900">Dia de Visita Técnica in loco</h2>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Registros das atividades de estudo do meio e formação de professores realizadas em parceria com a <strong>Rede Municipal de Educação de Tremembé</strong>. Os docentes vivenciam os caminhos da ferrovia, o centro histórico e as várzeas irrigadas para a construção de sequências didáticas inovadoras.
+              </p>
+              <div class="pt-2 flex items-center space-x-4 text-xs font-semibold text-stone-700">
+                <span class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-700 mr-1.5"></i> Formação BNCC</span>
+                <span class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-700 mr-1.5"></i> Fontes Primárias</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-parchment p-5 rounded-xl border border-stone-200 space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-serif-title font-bold text-stone-900 text-base">Oficinas Pedagógicas</h4>
+                <p class="text-stone-600 text-xs leading-relaxed">Análise documental e elaboração de planos de aula integrados sobre a história local.</p>
+              </div>
+
+              <div class="bg-parchment p-5 rounded-xl border border-stone-200 space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-burgundy/10 text-burgundy flex items-center justify-center">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-serif-title font-bold text-stone-900 text-base">Roteiros Históricos</h4>
+                <p class="text-stone-600 text-xs leading-relaxed">Mapeamento dos pontos de memória: Estação, Igreja Matriz e Abadia Trapista.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente Incorporado: Visualizador de Apresentação / Slides -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold text-amber-900 uppercase tracking-widest">Pesquisa em Destaque</span>
+            <h2 class="text-2xl md:text-3xl font-serif-title font-bold text-stone-900">Visualizador de Slides Incorporado</h2>
+            <p class="text-stone-600 text-xs md:text-sm">Apresentação acadêmica: <em>"Das Várzeas aos Trilhos (1912-1914)"</em> por Prof. José Eduardo M. Manfredini Júnior (UNITAU/NPH)</p>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <span id="slide-counter" class="text-xs font-mono text-stone-600 bg-stone-200 px-3 py-1.5 rounded-lg font-semibold">Página 1 de 12</span>
+            <button id="slide-btn-fullscreen" class="p-2 text-stone-700 hover:text-burgundy bg-stone-200 rounded-lg text-xs font-semibold flex items-center">
+              <i data-lucide="maximize" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Caixa do Player de Slides -->
+        <div id="slide-viewer-box" class="slide-viewer-box border border-stone-800 text-stone-100">
+          
+          <!-- Barra Superior do Player -->
+          <div class="bg-stone-900 px-4 py-3 border-b border-stone-800 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-red-500"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500"></span>
+              <span id="slide-header-title" class="text-xs font-medium text-stone-400 ml-2 truncate max-w-xs md:max-w-md">Das Várzeas aos Trilhos</span>
+            </div>
+            <span class="text-xs text-amber-400 font-mono">PDF.js Viewer Emulation</span>
+          </div>
+
+          <!-- Palco de Conteúdo do Slide -->
+          <div id="slide-content-stage" class="slide-content-stage p-8 md:p-12">
+            <!-- Injetado dinamicamente via JS -->
+          </div>
+
+          <!-- Barra Inferior de Controles -->
+          <div class="bg-stone-900 px-6 py-4 border-t border-stone-800 flex items-center justify-between">
+            <button id="slide-btn-prev" class="px-4 py-2 bg-stone-800 hover:bg-stone-700 disabled:opacity-40 text-stone-200 text-xs font-semibold rounded-lg transition-all flex items-center">
+              <i data-lucide="chevron-left" class="w-4 h-4 mr-1"></i> Anterior
+            </button>
+
+            <div class="hidden sm:block text-xs text-stone-400 italic">
+              Use as setas para navegar entre os slides de pesquisa
+            </div>
+
+            <button id="slide-btn-next" class="px-4 py-2 bg-burgundy hover:bg-burgundyHover disabled:opacity-40 text-white text-xs font-semibold rounded-lg transition-all flex items-center">
+              Próximo <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Painel de Notas do Slide -->
+        <div class="mt-4 bg-parchment p-4 rounded-xl border border-stone-200 text-xs text-stone-700 flex items-start space-x-3">
+          <i data-lucide="info" class="w-4 h-4 text-amber-800 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="text-stone-900 font-semibold">Notas do Pesquisador:</strong>
+            <span id="slide-notas-text" class="ml-1 text-stone-600">Slide de Abertura.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SEÇÃO 2: HISTÓRIA DE TREMEMBÉ ==================== -->
+    <section id="historia" class="page-section hidden">
+      <div class="bg-stone-900 text-stone-100 py-12 border-b border-amber-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Eixo Historiográfico</span>
+          <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-stone-100 mt-1">História de Tremembé</h1>
+          <p class="text-stone-300 text-sm max-2xl mt-2 leading-relaxed">
+            Navegue pelos módulos temáticos que explicam a formação territorial, a fé popular, o ciclo dos monges trapistas e a era dos trilhos no Vale do Paraíba.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg-grid-cols-12 gap-8">
+          
+          <!-- Sidebar Navigation Temática -->
+          <div class="lg:col-span-4 space-y-2">
+            <div class="bg-parchment p-3 rounded-2xl border border-stone-200 shadow-sm space-y-1">
+              <a href="#hist-origens" class="block p-3 rounded-xl bg-burgundy text-white text-sm font-semibold font-serif-title flex items-center">
+                <i data-lucide="compass" class="w-4 h-4 mr-3"></i> 1. Origens e Povoamento
+              </a>
+              <a href="#hist-religiao" class="block p-3 rounded-xl text-stone-700 hover-bg-stone-200 text-sm font-semibold font-serif-title flex items-center">
+                <i data-lucide="church" class="w-4 h-4 mr-3"></i> 2. Devoção ao Bom Jesus
+              </a>
+              <a href="#hist-monarquia" class="block p-3 rounded-xl text-stone-700 hover-bg-stone-200 text-sm font-semibold font-serif-title flex items-center">
+                <i data-lucide="scroll" class="w-4 h-4 mr-3"></i> 3. Freguesia e Emancipação
+              </a>
+              <a href="#hist-trapistas" class="block p-3 rounded-xl text-stone-700 hover-bg-stone-200 text-sm font-semibold font-serif-title flex items-center">
+                <i data-lucide="sprout" class="w-4 h-4 mr-3"></i> 4. A Presença Trapista
+              </a>
+              <a href="#hist-ferrovia" class="block p-3 rounded-xl text-stone-700 hover-bg-stone-200 text-sm font-semibold font-serif-title flex items-center">
+                <i data-lucide="train-track" class="w-4 h-4 mr-3"></i> 5. A Era Ferroviária
+              </a>
+            </div>
+          </div>
+
+          <!-- Conteúdo Narrativo da História -->
+          <div class="lg:col-span-8 space-y-10">
+            
+            <!-- Módulo 1 -->
+            <div id="hist-origens" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 space-y-4">
+              <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase">Módulo I</span>
+              <h2 class="text-2xl font-serif-title font-bold text-stone-900">Origens e Povoamento (Várzeas do Paraíba)</h2>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                A ocupação primitiva do território de Tremembé antecede a colonização portuguesa. A região de terras baixas e úmidas, banhada pelas curvas meândricas do Rio Paraíba do Sul, era habitada por povos indígenas da família Tupi-Guarani. O próprio toponímico <em>Tremembé</em> deriva do tupi-guarani e faz referência às terras de água reprimida, charcos e várzeas alagadiças.
+              </p>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                No século XVII, com o avanço das entradas e bandeiras paulistas em direção às Minas Gerais e ao Vale do Paraíba, o povoador <strong>Manoel da Silva Rosa</strong> fixou moradia nas proximidades do rio, estabelecendo os primeiros ranchos de apoio e lavouras de subsistência.
+              </p>
+            </div>
+
+            <!-- Módulo 2 -->
+            <div id="hist-religiao" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 space-y-4">
+              <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase">Módulo II</span>
+              <h2 class="text-2xl font-serif-title font-bold text-stone-900">Religiosidade: Devoção ao Senhor Bom Jesus</h2>
+              <div class="my-4 rounded-xl overflow-hidden shadow-md">
+                <img src="Fotos/Basílica 1911.jpg" alt="Basílica do Senhor Bom Jesus" class="w-full h-64 object-cover" />
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Em 1672, a história de Tremembé ganha um marco espiritual decisivo com o achado da venerada imagem do Senhor Bom Jesus às margens do Rio Paraíba. O capitão <strong>Bento Furtado de Mendonça</strong> promoveu a construção de uma modesta capela de taipa de pilão para abrigar a escultura.
+              </p>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Rapidamente, a fama dos prodígios e milagres atribuídos à imagem atraiu romarias vinda de diversas vilas do interior paulista e fluminense. Essa devoção transformou o povoado em um dos mais importantes polos de fé católica do estado, culminando na construção do imponente santuário que hoje ostenta o título de <strong>Basílica Menor do Senhor Bom Jesus de Tremembé</strong>.
+              </p>
+            </div>
+
+            <!-- Módulo 3 -->
+            <div id="hist-monarquia" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 space-y-4">
+              <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase">Módulo III</span>
+              <h2 class="text-2xl font-serif-title font-bold text-stone-900">Período Monárquico e Emancipação Política (1896)</h2>
+              <div class="my-4 rounded-xl overflow-hidden shadow-md">
+                <img src="Fotos/CÂMARA3.jpg" alt="Prédio da Câmara Municipal de Tremembé" class="w-full h-64 object-cover" />
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Ao longo do século XIX, o crescimento populacional e o aumento do tráfego comercial nas várzeas justificaram a reorganização administrativa do vilarejo. Em 1866, o governo provincial elevou o lugar a Freguesia.
+              </p>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Com o advento da República, os líderes locais articularam a autonomia completa em relação a Taubaté. Em <strong>26 de novembro de 1896</strong>, através da Lei Estadual nº 458, Tremembé conquistou sua emancipação política e administrativa, instalando os poderes Executivo e Legislativo locais.
+              </p>
+            </div>
+
+            <!-- Módulo 4 -->
+            <div id="hist-trapistas" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 space-y-4">
+              <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase">Módulo IV</span>
+              <h2 class="text-2xl font-serif-title font-bold text-stone-900">A Presença Trapista: Dom Jean Baptiste Chautard</h2>
+              <div class="my-4 rounded-xl overflow-hidden shadow-md">
+                <img src="Fotos/monjas trapistas 1907.jpg" alt="Monges Trapistas na Abadia de Maristella" class="w-full h-64 object-cover" />
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                No ano de 1904, desembarcaram em Tremembé os monges da Ordem Cisterciense da Estrita Observância (Trapistas), vindos da França sob a liderança do Abade <strong>Dom Jean Baptiste Chautard</strong>. Os religiosos adquiriram as terras da antiga Fazenda Maristella.
+              </p>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Os trapistas revolucionaram a agricultura regional ao introduzir a <strong>cultura irrigada e drenada do arroz</strong>. Aplicando conhecimentos avançados de hidráulica e maquinário agrícola moderno, transformaram as várzeas antes improdutivas no maior polo produtor de arroz do Estado de São Paulo nas primeiras décadas do século XX.
+              </p>
+            </div>
+
+            <!-- Módulo 5 -->
+            <div id="hist-ferrovia" class="bg-parchment p-6 md:p-8 rounded-2xl border border-stone-200 space-y-4">
+              <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase">Módulo V</span>
+              <h2 class="text-2xl font-serif-title font-bold text-stone-900">A Era Ferroviária: Paulo de Frontin e a E.F.C.B.</h2>
+              <div class="my-4 rounded-xl overflow-hidden shadow-md">
+                <img src="Fotos/estação 1.jpg" alt="Estação Ferroviária de Tremembé" class="w-full h-64 object-cover" />
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Com a expansão da safra arrozeira dos Trapistas e dos produtores locais, tornou-se urgente conectar o município à malha ferroviária nacional. O renomado engenheiro <strong>Dr. Paulo de Frontin</strong> intermediou junto ao Governo Federal e à direção da Estrada de Ferro Central do Brasil (E.F.C.B.) a construção de um ramal exclusivo.
+              </p>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Inaugurada com grandes festejos em <strong>1914</strong>, a Estação Ferroviária de Tremembé passou a ser o coração pulsante da vida urbana, encurtando distâncias, trazendo migrantes e escoando toneladas de grãos para a Capital Paulista e para o Rio de Janeiro.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEÇÃO 3: ACERVO DIGITAL ==================== -->
+    <section id="acervo" class="page-section hidden">
+      <div class="bg-stone-900 text-stone-100 py-12 border-b border-amber-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Repositório Digital</span>
+          <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-stone-100 mt-1">Acervo Histórico Digital</h1>
+          <p class="text-stone-300 text-sm max-2xl mt-2 leading-relaxed">
+            Consulte documentos textuais, iconografia histórica real, plantas cartográficas e depoimentos orais catalogados para pesquisa científica e escolar.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Barra de Busca & Filtros por Categoria -->
+        <div class="bg-parchment p-6 rounded-2xl border border-stone-200 shadow-sm space-y-6 mb-8">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Campo de Busca Textual -->
+            <div class="w-full md:w-96 flex items-center bg-white border border-stone-300 rounded-xl px-3.5 py-2.5 shadow-inner focus-within:ring-2 focus-within:ring-burgundy">
+              <i data-lucide="search" class="w-4 h-4 text-stone-400 mr-2"></i>
+              <input type="text" id="acervo-search-input" placeholder="Buscar por título, código ou palavra-chave..." class="w-full bg-transparent text-sm text-stone-800 placeholder-stone-400 focus:outline-none" />
+            </div>
+
+            <!-- Contador de Resultados -->
+            <span id="acervo-results-count" class="text-xs font-semibold text-stone-600 font-mono">
+              Carregando documentos...
+            </span>
+          </div>
+
+          <!-- Botões de Categoria -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-stone-200">
+            <button class="acervo-filter-btn filter-tag active px-4 py-1.5 rounded-full text-xs font-semibold border border-stone-300 bg-white" data-category="Todos">Todos</button>
+            <button class="acervo-filter-btn filter-tag px-4 py-1.5 rounded-full text-xs font-semibold border border-stone-300 bg-white" data-category="Fotografias">Fotografias</button>
+            <button class="acervo-filter-btn filter-tag px-4 py-1.5 rounded-full text-xs font-semibold border border-stone-300 bg-white" data-category="Documentos Textuais">Documentos Textuais</button>
+            <button class="acervo-filter-btn filter-tag px-4 py-1.5 rounded-full text-xs font-semibold border border-stone-300 bg-white" data-category="Mapas/Plantas">Mapas & Plantas</button>
+            <button class="acervo-filter-btn filter-tag px-4 py-1.5 rounded-full text-xs font-semibold border border-stone-300 bg-white" data-category="Áudios/Depoimentos">Áudios & Depoimentos</button>
+          </div>
+        </div>
+
+        <!-- Grid de Cards do Acervo -->
+        <div id="acervo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Lightbox do Acervo Digital -->
+    <div id="acervo-lightbox-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+      <div class="bg-parchment modal-content max-w-3xl w-full rounded-2xl shadow-2xl border border-stone-300 overflow-hidden p-6 relative">
+        <button onclick="closeAcervoModal()" class="absolute top-4 right-4 p-2 text-stone-400 hover:text-stone-800 rounded-full">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <div id="acervo-modal-body">
+          <!-- Conteúdo injetado via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SEÇÃO 4: ESPAÇO DO PROFESSOR ==================== -->
+    <section id="espaco-professor" class="page-section hidden">
+      <div class="bg-stone-900 text-stone-100 py-12 border-b border-amber-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Recursos Pedagógicos</span>
+          <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-stone-100 mt-1">Espaço do Professor</h1>
+          <p class="text-stone-300 text-sm max-2xl mt-2 leading-relaxed">
+            Materiais didáticos, sequências para sala de aula, roteiros de Estudo do Meio e transcrições de fontes primárias adaptadas à BNCC.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div id="professor-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEÇÃO 5: PUBLICAÇÕES E ARTIGOS ==================== -->
+    <section id="publicacoes" class="page-section hidden">
+      <div class="bg-stone-900 text-stone-100 py-12 border-b border-amber-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Produção Acadêmica</span>
+          <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-stone-100 mt-1">Publicações e Artigos</h1>
+          <p class="text-stone-300 text-sm max-2xl mt-2 leading-relaxed">
+            Repositório de artigos científicos, ensaios historiográficos e pesquisas de pós-graduação sobre Tremembé e o Vale do Paraíba.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div id="publicacoes-list-container" class="space-y-6">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== RODAPÉ INSTITUCIONAL ==================== -->
+  <footer class="bg-stone-900 text-stone-300 border-t border-stone-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-stone-800">
+        
+        <!-- Coluna 1: Sobre -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-burgundy flex items-center justify-center text-amber-100">
+              <i data-lucide="train-front" class="w-5 h-5"></i>
+            </div>
+            <span class="text-lg font-serif-title font-bold text-stone-100">Estação da Memória</span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+            Portal digital e centro de documentação histórica mantido por educadores e pesquisadores. Compromisso com a preservação da memória e a inovação no ensino de História Local.
+          </p>
+        </div>
+
+        <!-- Coluna 2: Navegação Rápida -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-amber-400 font-sans">Navegação por Abas</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-amber-200 transition-colors">Página Inicial (Home)</a></li>
+            <li><a href="#historia" class="hover:text-amber-200 transition-colors">História de Tremembé</a></li>
+            <li><a href="#acervo" class="hover:text-amber-200 transition-colors">Acervo Histórico Digital</a></li>
+            <li><a href="#espaco-professor" class="hover:text-amber-200 transition-colors">Espaço do Professor</a></li>
+            <li><a href="#publicacoes" class="hover:text-amber-200 transition-colors">Publicações Acadêmicas</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Apoio Institucional -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-amber-400 font-sans">Apoio & Parcerias</h4>
+          <div class="text-xs text-stone-400 space-y-1">
+            <p>• Rede Municipal de Ensino de Tremembé (SP)</p>
+            <p>• Núcleo de Pesquisa Histórica (NPH / UNITAU)</p>
+            <p>• Arquivo Histórico do Vale do Paraíba</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Estação da Memória: Tremembé. Conteúdo sob licença Creative Commons BY-NC 4.0.</p>
+        <p class="flex items-center">
+          <i data-lucide="globe" class="w-3.5 h-3.5 mr-1 text-amber-600"></i> Pronto para hospedagem no <strong>GitHub Pages</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Globais -->
+  <script src="js/app.js"></script>
+</body>
+</html>

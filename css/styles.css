@@ -1,0 +1,205 @@
+/* Estação da Memória: Tremembé - Stylesheet System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --bg-main: #FDFBF7;
+  --bg-card: #F4EFE6;
+  --bg-card-hover: #EFE8DA;
+  --primary-burgundy: #8B261D;
+  --primary-burgundy-hover: #701D16;
+  --primary-burgundy-light: #F8EBE9;
+  --accent-gold: #C5A059;
+  --accent-gold-light: #F7F1E3;
+  --text-dark: #2B2B2B;
+  --text-muted: #5C5452;
+  --text-sepia: #4A3E3D;
+  --border-light: #E5DEC9;
+  --border-burgundy: #D8ACA7;
+  --shadow-soft: 0 4px 20px -2px rgba(43, 43, 43, 0.08);
+  --shadow-hover: 0 10px 30px -4px rgba(139, 38, 29, 0.15);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif-title {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5CBB9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-burgundy);
+}
+
+/* Header & Navbar Blur */
+.header-glass {
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Navigation active indicator */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-burgundy);
+  transition: width 0.3s ease;
+}
+
+.nav-link.active {
+  color: var(--primary-burgundy);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Timeline Horizontal Scroll */
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--border-light) 0%, var(--primary-burgundy) 50%, var(--accent-gold) 100%);
+  z-index: 1;
+}
+
+.timeline-node {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-node.active .node-circle {
+  background-color: var(--primary-burgundy);
+  border-color: var(--accent-gold);
+  transform: scale(1.25);
+  box-shadow: 0 0 0 6px rgba(139, 38, 29, 0.15);
+  color: #FFFFFF;
+}
+
+.timeline-node.active .node-year {
+  color: var(--primary-burgundy);
+  font-weight: 700;
+}
+
+/* Parchment / Historical Texture Effect */
+.bg-parchment {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.bg-parchment-pattern {
+  background-color: #F9F5EC;
+  background-image: radial-gradient(#E8DEC8 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+/* Slide Viewer Custom Styling */
+.slide-viewer-box {
+  background: #1E1B18;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.slide-content-stage {
+  min-height: 380px;
+  background: linear-gradient(135deg, #2D2724 0%, #1A1715 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Lightbox Modal Animation */
+.modal-backdrop {
+  background-color: rgba(20, 18, 16, 0.85);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Badge Styles */
+.badge-burgundy {
+  background-color: var(--primary-burgundy-light);
+  color: var(--primary-burgundy);
+  border: 1px solid var(--border-burgundy);
+}
+
+.badge-gold {
+  background-color: var(--accent-gold-light);
+  color: #8C6A23;
+  border: 1px solid #E5CE9C;
+}
+
+/* Custom Card Hover */
+.interactive-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-burgundy);
+}
+
+/* Filter Tag Buttons */
+.filter-tag {
+  transition: all 0.2s ease;
+}
+
+.filter-tag.active {
+  background-color: var(--primary-burgundy);
+  color: #FFFFFF;
+  border-color: var(--primary-burgundy);
+}
