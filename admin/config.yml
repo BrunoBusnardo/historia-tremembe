@@ -1,0 +1,40 @@
+backend:
+  name: file
+  # arquivos serão armazenados na pasta "conteudo/"
+  location: "conteudo/"
+media_folder: "conteudo/media"
+public_folder: "conteudo"
+collections:
+  - name: "artigos"
+    label: "Artigos"
+    folder: "conteudo/artigos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Autor", name: "author", widget: "string"}
+      - {label: "Imagem", name: "image", widget: "image"}
+      - {label: "Arquivo PDF", name: "pdf", widget: "file"}
+      - {label: "Resumo", name: "summary", widget: "text"}
+  - name: "acervo"
+    label: "Acervo"
+    folder: "conteudo/acervo"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Tipo", name: "type", widget: "string"}
+      - {label: "Período", name: "period", widget: "string"}
+      - {label: "Imagem", name: "image", widget: "image"}
+      - {label: "Descrição", name: "description", widget: "text"}
+  - name: "espaco_professor"
+    label: "Espaço do Professor"
+    folder: "conteudo/espaco_professor"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Nível", name: "level", widget: "string"}
+      - {label: "Arquivo PDF", name: "pdf", widget: "file"}
+      - {label: "Descrição", name: "description", widget: "text"}
